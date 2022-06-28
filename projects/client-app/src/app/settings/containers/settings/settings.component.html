@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row mt-4 pl-3">
+    <div class="col-12">
+      <h1>Settings</h1>
+    </div>
+  </div>
+  <div class="row mt-3 pl-3 pb-1">
+    <div class="col-12">
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="preloadPanel === 'unit-of-measurement'">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h3>Units of Measurement</h3>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-unit-of-measurement-container></app-unit-of-measurement-container>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <h3>Categories</h3>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-category-container></app-category-container>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</div>

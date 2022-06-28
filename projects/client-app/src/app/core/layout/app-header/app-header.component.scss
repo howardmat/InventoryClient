@@ -1,0 +1,23 @@
+.site-title span {
+  font-size:1.2rem;
+}
+.site-logo {
+  margin: 0 4px 0;
+}
+.menu-icon {
+  transition:0.25s;
+}
+.rotated {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 56px;
+}
+@media (max-width: 599px) {
+  .mat-toolbar-row,
+  .mat-toolbar-single-row{
+    padding: 0;
+  }
+}

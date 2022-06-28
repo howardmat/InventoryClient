@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <span>
+    <button mat-button class="site-title">
+      <mat-icon class="site-logo">widgets</mat-icon> <span>Inventory</span>
+    </button>
+    <button 
+      mat-icon-button 
+      (click)="onMenuToggleClick()"
+      *ngIf="showExpandIcon"><mat-icon>menu</mat-icon></button>
+  </span>
+  <span class="flex-fill"></span>
+  <button 
+    mat-button 
+    [matMenuTriggerFor]="menu"
+    #menuTrigger="matMenuTrigger">
+    <span>{{ userDisplayName }}</span>
+    <mat-icon 
+      class="menu-icon"
+      [ngClass]="{'rotated': menuTrigger.menuOpen}">expand_more</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Account Settings</span>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item (click)="onLogout()">
+      <mat-icon>power_settings_new</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

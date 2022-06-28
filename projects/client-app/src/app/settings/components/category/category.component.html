@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="row mt-3">
+    <div class="col-12">
+      <h3>{{ editMode ? 'Edit' : 'Add' }}</h3>
+    </div>
+  </div>
+  <div class="row mt-2 pb-1">
+    <div class="col-12">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" placeholder="Ex. Dye, Scent Oil, Wax" />
+              <mat-error
+                *ngIf="nameFormControl.invalid && nameFormControl.touched"
+                >{{ getErrorMessage() }}</mat-error
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field>
+              <mat-label>Category Type</mat-label>
+              <mat-select formControlName="categoryType">
+                <mat-option *ngFor="let item of categoryTypeSource | keyvalue" [value]="item.value">
+                  {{item.value}}
+                </mat-option>
+              </mat-select>
+              <mat-error
+                *ngIf="
+                  categoryTypeFormControl.invalid &&
+                  categoryTypeFormControl.touched
+                "
+                >{{ getErrorMessage() }}</mat-error
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-6 d-flex justify-content-start">
+            <button
+              (click)="onCancel()"
+              type="button"
+              mat-stroked-button 
+              color="primary"
+            >
+              <mat-icon>keyboard_backspace</mat-icon> <span>Back</span>
+            </button>
+          </div>
+          <div class="col-6 d-flex justify-content-end">
+            <button
+              type="submit"
+              class="mr-1"
+              mat-raised-button
+              color="primary"
+              [disabled]="!form.valid"
+            >
+              {{ editMode ? 'Update' : 'Add' }}
+            </button>
+            <button
+              type="button"
+              mat-raised-button
+              color="accent"
+              (click)="onReset()"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

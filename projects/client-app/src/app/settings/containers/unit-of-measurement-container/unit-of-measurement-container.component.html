@@ -1,0 +1,15 @@
+<app-unit-of-measurement-list 
+  (delete)="onDelete($event)"
+  (add)="onAdd()"
+  (edit)="onEdit($event)"
+  [ngStyle]="{'display':showForm ? 'none' : 'block'}"></app-unit-of-measurement-list>
+<app-unit-of-measurement 
+  *ngIf="showForm"
+  [model]="model"
+  (save)="onFormSave($event)"
+  (cancel)="onFormCancel()"></app-unit-of-measurement>
+<div 
+  class="overlay-spinner"
+  *ngIf="isUpdating">
+  <mat-spinner></mat-spinner>
+</div>

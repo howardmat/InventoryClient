@@ -1,0 +1,15 @@
+<app-category-list 
+  (delete)="onDelete($event)"
+  (add)="onAdd()"
+  (edit)="onEdit($event)"
+  [ngStyle]="{'display':showForm ? 'none' : 'block'}"></app-category-list>
+<app-category 
+  *ngIf="showForm"
+  [model]="model"
+  (save)="onFormSave($event)"
+  (cancel)="onFormCancel()"></app-category>
+<div 
+  class="overlay-spinner"
+  *ngIf="isUpdating">
+  <mat-spinner></mat-spinner>
+</div>

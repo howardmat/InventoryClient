@@ -1,0 +1,115 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+@import "variables";
+
+// Imports functions, variables, and mixins that are needed by other Bootstrap files
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+// Import Bootstrap Reboot
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/grid"; // add the grid
+@import "~bootstrap/scss/utilities"; // add css utilities
+
+@import "reset";
+
+html,
+body {
+  height: 100%;
+  font-family: Roboto, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial,
+    Lucida Grande, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight:400;
+}
+h1 { 
+  font-size:1.7rem;
+}
+h2 { 
+  font-size:1.3rem;
+}
+h3{ 
+  font-size:1.1rem;
+}
+
+table {
+  width: 100%;
+}
+
+
+// Custom styles
+div.overlay-spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+.page-content {
+  padding: 15px;
+}
+
+.component-page-header {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  background: #673ab7;
+  padding-left: 25px;
+}
+.component-page-header h1 {
+  font-weight: 300;
+  margin: 0;
+  padding: 22px 8px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.tab-container {
+  margin-top: 25px;
+}
+
+.message {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.message .message-close-icon {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  cursor: pointer;
+}
+.message-body {
+  border-color: #dbdbdb;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 0 0 0 4px;
+  color: #4a4a4a;
+  padding: 1.25em 1.5em;
+}
+.message.is-danger {
+  background-color: #feecf0;
+}
+.message.is-danger .message-body {
+  border-color: #f14668;
+  color: #cc0f35;
+}
+
+// Material Component Styles 
+mat-form-field {
+  width: 100%;
+}
+mat-panel-title {
+  h3 {
+    margin-bottom: 0px;
+  }
+}
+
+.mat-column-action {
+  width:105px;
+}
